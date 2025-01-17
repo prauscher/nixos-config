@@ -197,7 +197,7 @@
       keepass) exec sh -c "${rofi-keepass} /home/prauscher/Nextcloud/Passwords.kdbx" ;;
       thwkeepass) exec sh -c "${rofi-keepass} /home/prauscher/THW/Nextcloud/3.\ Gruppen/OV-Führung/Passwörter.kdbx" ;;
       chat) exec sh -c "${pkgs.alacritty}/bin/alacritty -e sh -c 'TERM=xterm256color ssh -t shells.darmstadt.ccc.de \"tmux attach\"'" ;;
-      lock) exec sh -c "sleep 0.2; ${pkgs.killall}/bin/killall -USR1 swayidle" ;;
+      lock) exec sh -c "${lock_screen}" ;;
       suspend) exec sh -c "systemctl suspend" ;;
       esac
     '';
