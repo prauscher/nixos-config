@@ -522,7 +522,7 @@
       enable = true;
       timeouts = [
         { timeout = 50;
-          command = "${pkgs.brightnessctl}/bin/brightnessctl set -n 1 30%-";
+          command = "${pkgs.brightnessctl}/bin/brightnessctl set -n=1 30%-";
           resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl set +30%"; }
         { timeout = 60; command = "${lock_screen}"; }
         { timeout = 300;
