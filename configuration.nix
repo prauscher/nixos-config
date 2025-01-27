@@ -498,6 +498,7 @@
     };
     programs.git = {
       enable = true;
+      package = pkgs.gitFull;
       userName = "Patrick Rauscher";
       userEmail = "prauscher@prauscher.de";
       extraConfig.init.defaultBranch = "main";
@@ -582,7 +583,6 @@
     wget
     htop
     jq
-    git
     bluez
   ];
 
