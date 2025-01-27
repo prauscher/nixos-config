@@ -92,7 +92,7 @@
   users.users.prauscher = {
     isNormalUser = true;
     description = "Patrick Rauscher";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "wireshark" ];
     packages = with pkgs; [
       google-chrome
       evolution
