@@ -123,6 +123,9 @@
       mitmproxy
       whois
       dnsutils
+      openssl
+      socat
+      ipcalc
     ];
   };
 
