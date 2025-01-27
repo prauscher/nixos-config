@@ -117,7 +117,6 @@
       seahorse
       adwaita-icon-theme
       gnomeExtensions.appindicator
-      wireshark
       tcpdump
       nmap
       mitmproxy
@@ -130,6 +129,9 @@
   };
 
   users.defaultUserShell = pkgs.fish;
+
+  programs.wireshark.enable = true;
+  programs.wireshark.package = pkgs.wireshark;
 
   home-manager.users.prauscher = let
     modifier = "Mod4";
