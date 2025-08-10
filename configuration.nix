@@ -173,11 +173,11 @@
       _bgtask=$!
 
       USERNAME=$(keyctl pipe "$KEY_ID" | keepassxc-cli show -qa UserName "$PASSWORD_DATABASE" "$PASS_ID" 2>/dev/null)
+      notify-send -t 5000 "$PASS_ID: $USERNAME" "Das Passwort wurde für 10 Sekunden in der Zwischenablage gespeichert"
+
       TOTP=$(keyctl pipe "$KEY_ID" | keepassxc-cli show -qt "$PASSWORD_DATABASE" "$PASS_ID" 2>/dev/null)
       if [ $? -eq 0 ]; then
         notify-send -t 10000 "$PASS_ID: $USERNAME" "Der TOTP-Token lautet <b>$TOTP</b>"
-      else
-        notify-send -t 5000 "$PASS_ID: $USERNAME" "Das Passwort wurde für 10 Sekunden in der Zwischenablage gespeichert"
       fi
 
       wait $_bgtask
