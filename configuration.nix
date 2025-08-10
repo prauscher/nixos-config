@@ -125,6 +125,8 @@
       openssl
       socat
       ipcalc
+      wlr-randr
+      usbutils
     ];
   };
 
