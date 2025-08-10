@@ -538,6 +538,39 @@
         { event = "before-sleep"; command = "${lock_screen}"; }
       ];
     };
+    services.kanshi = {
+      enable = true;
+      settings = [
+        {
+          profile.name = "undocked";
+          profile.outputs = [
+            {
+              criteria = "eDP-1";
+              status = "enable";
+            }
+          ];
+        }
+        {
+          profile.name = "dock_home";
+          profile.outputs = [
+            {
+              criteria = "eDP-1";
+              status = "disable";
+            }
+            {
+              criteria = "Dell Inc. DELL U2415 7MT019AB0YPU";
+              status = "enable";
+              position = "0,0";
+            }
+            {
+              criteria = "Dell Inc. DELL U2415 XKV0P9BI1A6L";
+              status = "enable";
+              position = "1920,0";
+            }
+          ];
+        }
+      ];
+    };
     home.packages = with pkgs; [
       keyutils
       keepassxc
