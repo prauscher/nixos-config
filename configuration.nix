@@ -127,10 +127,11 @@
       ipcalc
       wlr-randr
       usbutils
+      fish
     ];
   };
 
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.nushell;
 
   programs.wireshark.enable = true;
   programs.wireshark.package = pkgs.wireshark;
@@ -589,6 +590,9 @@
       @theme "${pkgs.rofi}/share/rofi/themes/fancy.rasi"
     '';
     home.file.".config/alacritty/alacritty.toml".text = ''
+      [env]
+      TERM = "xterm-256color"
+
       [colors.primary]
       background = "#000000"
 
@@ -622,6 +626,8 @@
   ];
 
   services.gnome.gnome-keyring.enable = true;
+
+  programs.nushell.enable = true;
 
   programs.fish.enable = true;
 
