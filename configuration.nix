@@ -518,6 +518,7 @@
       height = 500;
       margin = "5";
       padding = "5";
+      defaultTimeout = "20000";
     };
     services.nextcloud-client = {
       enable = true;
