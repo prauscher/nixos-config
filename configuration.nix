@@ -506,6 +506,14 @@
       userEmail = "prauscher@prauscher.de";
       extraConfig.init.defaultBranch = "main";
     };
+    programs.nushell = {
+      enable = true;
+      extraConfig = ''
+        $env.config.buffer_editor = "nano";
+        $env.config.show_banner = false;
+        $env.LANG = "de_DE.UTF-8";
+      '';
+    };
     services.mako = {
       enable = true;
       font = "Roboto 14";
