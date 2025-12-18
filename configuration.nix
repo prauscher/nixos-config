@@ -282,7 +282,7 @@
       };
       config.startup = [
         # not setting directly due to https://github.com/nix-community/home-manager/issues/5311
-        { always = true; command = ''${pkgs.sway}/bin/swaymsg output "*" bg "/home/prauscher/Nextcloud/wallpapers/PXL_20231004_110951659.jpg" fill''; }
+        { always = true; command = ''${pkgs.sway}/bin/swaymsg output "*" bg "/home/prauscher/Nextcloud/wallpapers/PXL_20251110_100555366.PANO.crop.jpg" fill''; }
         { command = "${pkgs.mako}/bin/mako"; }
         { command = "${pkgs.dex}/bin/dex -a"; }
       ];
