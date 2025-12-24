@@ -75,6 +75,7 @@
   services.udev.packages = with pkgs; [ gnome-settings-daemon ];
   services.accounts-daemon.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Configure sound
   hardware.pulseaudio.enable = false;
@@ -133,8 +134,10 @@
 
   users.defaultUserShell = pkgs.nushell;
 
-  programs.wireshark.enable = true;
-  programs.wireshark.package = pkgs.wireshark;
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
 
   home-manager.users.prauscher = let
     modifier = "Mod4";
@@ -618,27 +621,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    liberation_ttf
-    ubuntu_font_family
-    font-awesome
-    roboto
-  ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    curl
-    wget
-    htop
-    jq
-    bluez
-  ];
-
-  services.gnome.gnome-keyring.enable = true;
-
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -658,6 +640,25 @@
       networkmanagerapplet
     ];
   };
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    liberation_ttf
+    ubuntu_font_family
+    font-awesome
+    roboto
+  ];
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim
+    curl
+    wget
+    htop
+    jq
+    bluez
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
