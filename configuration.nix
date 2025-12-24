@@ -214,6 +214,9 @@
     '';
 
   in {
+    # allow unfree packages
+    nixpkgs.config.allowUnfree = true;
+
     wayland.windowManager.sway = {
       enable = true;
       config.gaps.inner = 10;
@@ -508,6 +511,9 @@
       userName = "Patrick Rauscher";
       userEmail = "prauscher@prauscher.de";
       extraConfig.init.defaultBranch = "main";
+    };
+    programs.vscode = {
+      enable = true;
     };
     programs.nushell = {
       enable = true;
