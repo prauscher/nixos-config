@@ -514,6 +514,9 @@
         $env.LANG = "de_DE.UTF-8";
       '';
     };
+    programs.fish = {
+      enable = true;
+    };
     services.mako = {
       enable = true;
       font = "Roboto 14";
@@ -526,7 +529,7 @@
       height = 500;
       margin = "5";
       padding = "5";
-      defaultTimeout = "20000";
+      defaultTimeout = 20000;
     };
     services.nextcloud-client = {
       enable = true;
@@ -635,10 +638,6 @@
   ];
 
   services.gnome.gnome-keyring.enable = true;
-
-  programs.nushell.enable = true;
-
-  programs.fish.enable = true;
 
   programs.sway = {
     enable = true;
