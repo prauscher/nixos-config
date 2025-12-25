@@ -12,6 +12,6 @@ stdenv.mkDerivation {
   dontUnpack = true;
   installPhase = ''
     install -Dm755 ${./rofi-keepass.sh} $out/bin/rofi-keepass
-    wrapProgram $out/bin/rofi-keepass --prefix PATH : ${lib.makeBinPath [ pkgs.keepassxc pkgs.keyutils pkgs.libnotify pkgs.rofi ]}
+    wrapProgram $out/bin/rofi-keepass --prefix PATH : ${lib.makeBinPath [ pkgs.keepassxc pkgs.keyutils pkgs.libnotify pkgs.rofi pkgs.wl-clipboard ]}
   '';
 }
