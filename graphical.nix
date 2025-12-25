@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -379,6 +379,14 @@
     dconf = {
       enable = true;
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      settings."org/gnome/gedit/preferences/editor" = {
+        auto-indent = true;
+        syntax-highlighting = true;
+        insert-spaces = true;
+        tabs-size = lib.gvariant.mkUint32 4;
+        display-line-numbers = true;
+        style-scheme-for-dark-theme-variant = "cobalt";
+      };
     };
     programs.vscode = {
       enable = true;
