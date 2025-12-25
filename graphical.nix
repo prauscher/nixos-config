@@ -35,11 +35,13 @@
     # somehow required to show icon of nm-applet...
     extraPackages = with pkgs; [
       networkmanagerapplet
+      gnome-themes-extra
       adwaita-icon-theme
     ];
   };
 
   fonts.packages = with pkgs; [
+    adwaita-fonts
     noto-fonts
     liberation_ttf
     ubuntu-classic
@@ -87,9 +89,22 @@
     # allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    gtk.iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "adwaita-icon-theme";
+    home.pointerCursor = {
+      gtk.enable = true;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+
+    gtk = {
+      enable = true;
+      theme = {
+        package = pkgs.gnome-themes-extra;
+        name = "Adwaita";
+      };
+      iconTheme = {
+        package = pkgs.adwaita-icon-theme;
+        name = "Adwaita";
+      };
     };
 
     wayland.windowManager.sway = {
