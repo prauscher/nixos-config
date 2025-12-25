@@ -58,6 +58,7 @@
       firefox
       chromium
       eog
+      mpv
       gedit
       vscode
       alacritty
