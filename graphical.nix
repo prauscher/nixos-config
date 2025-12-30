@@ -71,6 +71,7 @@
       seahorse
       gnomeExtensions.appindicator
       wlr-randr
+      ausweisapp
     ];
   };
 
