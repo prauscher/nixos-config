@@ -2,6 +2,11 @@
 
 PASSWORD_DATABASE="$1"
 
+if [ ! -r "$PASSWORD_DATABASE" ]; then
+	rofi -e "Password Database not found"
+	exit
+fi
+
 KEY_DESC="keepassxc:$(printf "%s" "$PASSWORD_DATABASE" | sha256sum)"
 KEY_ID=$(keyctl search @s user "$KEY_DESC" 2> /dev/null)
 
