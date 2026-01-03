@@ -495,6 +495,19 @@
       opacity = 0.8
     '';
 
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = let
+        default-browser = "firefox.desktop";
+      in {
+        "text/html" = default-browser;
+        "x-scheme-handler/http" = default-browser;
+        "x-scheme-handler/https" = default-browser;
+        "x-scheme-handler/about" = default-browser;
+        "x-scheme-handler/unknown" = default-browser;
+      };
+    };
+
     home.stateVersion = "24.11";
   };
 }
