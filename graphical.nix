@@ -76,16 +76,7 @@
   };
 
   home-manager.users.prauscher = let
-    modifier = "Mod4";
-    terminal = "${pkgs.alacritty}/bin/alacritty";
-    left = "h";
-    down = "j";
-    up = "k";
-    right = "l";
-
     lock-screen = (pkgs.callPackage ./utils/lock-screen {});
-    rofi-keepass = (pkgs.callPackage ./utils/rofi-keepass {});
-    mymenu = (pkgs.callPackage ./utils/mymenu { rofi-keepass = rofi-keepass; lock-screen = lock-screen; });
 
   in {
     # allow unfree packages
@@ -109,7 +100,16 @@
       };
     };
 
-    wayland.windowManager.sway = {
+    wayland.windowManager.sway = let
+      modifier = "Mod4";
+      terminal = "${pkgs.alacritty}/bin/alacritty";
+      left = "h";
+      down = "j";
+      up = "k";
+      right = "l";
+      rofi-keepass = (pkgs.callPackage ./utils/rofi-keepass {});
+      mymenu = (pkgs.callPackage ./utils/mymenu { rofi-keepass = rofi-keepass; lock-screen = lock-screen; });
+    in {
       enable = true;
       config.gaps.inner = 10;
       config.gaps.outer = 0;
