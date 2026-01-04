@@ -123,7 +123,7 @@
       ];
       config.input."*".xkb_layout = "de";
       config.input."type:touch".map_to_output = "eDP-1";
-      config.output."eDP-1".scale = "1.4";
+      config.output."eDP-1".scale = "1";
       config.workspaceAutoBackAndForth = true;
       config.keybindings = {
         "${modifier}+q" = "layout toggle all";
