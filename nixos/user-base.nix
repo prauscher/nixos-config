@@ -50,6 +50,7 @@
     services.ssh-agent = {
       enable = true;
     };
+    home.file.".ssh/config".source = ./ssh_config;
     home.sessionVariables = {
       EDITOR = "nano";
       TERMINAL = "alacritty";

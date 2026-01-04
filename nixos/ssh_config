@@ -1,0 +1,19 @@
+SendEnv LC_* LANG PS1 PS2 PS3 PS4
+Compression yes
+VerifyHostKeyDNS yes
+AddKeysToAgent yes
+EnableEscapeCommandline yes
+NoHostAuthenticationForLocalhost yes
+
+Host 172.22.121.1
+User root
+
+Host cloud-server.thw-darmstadt.de
+User root
+
+Host ap*.thw-darmstadt.de ffda-*.prauscher.de *.nodes.ffda.io
+User root
+
+Host howard.prauscher.de
+ForwardX11 yes
+ForwardX11Trusted yes
