@@ -1,10 +1,6 @@
 { config, lib, pkgs, ... }:
 
-{ 
-  imports =
-    [ <home-manager/nixos>
-    ];
-
+{
   # Do not forget to use passwd to set an initial password
   users.users.prauscher = {
     isNormalUser = true;

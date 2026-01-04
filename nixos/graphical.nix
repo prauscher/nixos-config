@@ -1,10 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [ <home-manager/nixos>
-    ];
-
   services.displayManager = {
     defaultSession = "sway";
     autoLogin = {

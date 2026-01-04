@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ../hardware-configuration.nix
       ./user-base.nix
       ./graphical.nix
       ./workstation.nix
@@ -23,8 +23,7 @@
     options = "--delete-older-than 7d";
   };
   nix.settings.auto-optimise-store = true;
-
-  networking.hostName = "ramona";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
