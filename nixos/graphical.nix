@@ -495,6 +495,9 @@
       XDG_SESSION_DESKTOP = "sway";
     };
 
+    xdg.configFile."mimeapps.list".force = true;
+    # deprecated alias
+    xdg.dataFile."applications/mimeapps.list".force = true;
     xdg.mimeApps = {
       enable = true;
       defaultApplications = let
