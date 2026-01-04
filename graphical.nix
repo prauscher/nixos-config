@@ -494,17 +494,24 @@
       [window]
       opacity = 0.8
     '';
+    home.sessionVariables = {
+      XDG_CURRENT_DESKTOP = "sway:GNOME";
+      XDG_SESSION_DESKTOP = "sway";
+    };
 
     xdg.mimeApps = {
       enable = true;
       defaultApplications = let
         default-browser = "firefox.desktop";
+        default-mail = "org.gnome.Evolution.desktop";
       in {
         "text/html" = default-browser;
+        "message/rfc822" = default-mail;
         "x-scheme-handler/http" = default-browser;
         "x-scheme-handler/https" = default-browser;
         "x-scheme-handler/about" = default-browser;
         "x-scheme-handler/unknown" = default-browser;
+        "x-scheme-handler/mailto" = default-mail;
       };
     };
 
