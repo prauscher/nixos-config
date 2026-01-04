@@ -49,6 +49,9 @@
     programs.fish = {
       enable = true;
     };
+    services.ssh-agent = {
+      enable = true;
+    };
     home.sessionVariables = {
       EDITOR = "nano";
       TERMINAL = "alacritty";
