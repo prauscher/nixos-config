@@ -32,6 +32,8 @@
           email = "prauscher@prauscher.de";
         };
         init.defaultBranch = "main";
+        push.autoSetupRemote = true;
+        pull.rebase = true;
       };
     };
     programs.nushell = {
