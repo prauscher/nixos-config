@@ -123,6 +123,7 @@
       ];
       config.input."*".xkb_layout = "de";
       config.input."type:touch".map_to_output = "eDP-1";
+      config.input."2:10:TPPS/2_Elan_TrackPoint".pointer_accel = "-0.5";
       config.output."eDP-1".scale = "1";
       config.workspaceAutoBackAndForth = true;
       config.keybindings = {
