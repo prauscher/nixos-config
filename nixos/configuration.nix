@@ -52,7 +52,26 @@
   console.keyMap = "de";
 
   # Enable CUPS
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ postscript-lexmark ];
+  };
+  hardware.printers = {
+    ensureDefaultPrinter = "Home_Lexmark";
+    ensurePrinters = [
+      {
+        name = "Home_Lexmark";
+        description = "Lexmark CX317dn";
+        location = "Home";
+        deviceUri = "ipp://172.22.153.132/ipp/print";
+        model = "postscript-lexmark/Lexmark-CX310_Series-Postscript-Lexmark.ppd";
+        ppdOptions = {
+          PageSize = "A4";
+          Duplex = "None";  # duplex unit is broken
+        };
+      }
+    ];
+  };
 
   # Configure sound
   services.pulseaudio.enable = false;
