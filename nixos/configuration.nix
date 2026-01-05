@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, options, ... }:
+{ config, inputs, pkgs, lib, options, ... }:
 
 {
   imports =
@@ -16,13 +16,28 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Maintenance
+  nix.settings.auto-optimise-store = true;
+
+  # auto upgrade
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "-L"  # print build logs
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+    runGarbageCollection = true;
+  };
+
   nix.gc = {
-    automatic = true;
-    dates = "weekly";
+    # run during autoUpgrade
     options = "--delete-older-than 7d";
   };
-  nix.settings.auto-optimise-store = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable networking
   networking.networkmanager.enable = true;

@@ -10,10 +10,11 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = inputs @ { self, nixpkgs, home-manager }: {
     nixosConfigurations = {
       ramona = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           home-manager.nixosModules.home-manager
           ./hosts/ramona
@@ -21,6 +22,7 @@
       };
       amy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           home-manager.nixosModules.home-manager
           ./hosts/amy
