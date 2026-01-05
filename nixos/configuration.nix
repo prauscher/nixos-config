@@ -94,6 +94,7 @@
     wget
     htop
     jq
+    psmisc  # for killall
     bluez
   ];
 
