@@ -336,6 +336,7 @@
             activated = "";
             deactivated = "";
           };
+          start-activated = true;
         };
         pulseaudio = {
           format = "{volume}% {icon} {format_source}";
