@@ -468,6 +468,7 @@
       settings = [
         {
           profile.name = "undocked";
+          profile.exec = "${pkgs.killall}/bin/killall -s SIGUSR2 -r waybar";  # see https://github.com/Alexays/Waybar/issues/3163
           profile.outputs = [
             {
               criteria = "eDP-1";
@@ -477,6 +478,7 @@
         }
         {
           profile.name = "dock_home";
+          profile.exec = "${pkgs.killall}/bin/killall -s SIGUSR2 -r waybar";  # see https://github.com/Alexays/Waybar/issues/3163
           profile.outputs = [
             {
               criteria = "eDP-1";
