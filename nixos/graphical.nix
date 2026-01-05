@@ -394,6 +394,26 @@
     dconf = {
       enable = true;
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      settings."org/gnome/World/Secrets" = {
+        last-opened-list = [
+          "file:///home/prauscher/Nextcloud/Passwords.kdbx"
+          "file:///home/prauscher/THW/Nextcloud/3. Gruppen/OV-Führung/Passwörter.kdbx"
+        ];
+      };
+      settings."org/gnome/evince/default" = {
+        show-sidebar = true;
+      };
+      settings."org/gnome/evolution/mail" = {
+        composer-delay-outbox-flush = 5;
+        composer-use-outbox = true;
+        composer-magic-smileys = true;
+        composer-unicode-smileys = true;
+        prompt-check-if-default-mailer = false;
+        mark-seen = false;
+        forward-style = 2;
+        forward-style-name = "quoted";
+        reply-style-name = "quoted";
+      };
       settings."org/gnome/gedit/preferences/editor" = {
         auto-indent = true;
         syntax-highlighting = true;
