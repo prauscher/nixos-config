@@ -505,11 +505,17 @@
       defaultApplications = let
         default-browser = "firefox.desktop";
         default-pdf-viewer = "org.gnome.Evince.desktop";
+        default-image-viewer = "org.gnome.eog.desktop";
         default-mail = "org.gnome.Evolution.desktop";
       in {
-        "text/html" = default-browser;
-        "message/rfc822" = default-mail;
         "application/pdf" = default-pdf-viewer;
+        "image/gif" = default-image-viewer;
+        "image/png" = default-image-viewer;
+        "image/jpeg" = default-image-viewer;
+        "image/tiff" = default-image-viewer;
+        "image/svg+xml" = default-image-viewer;
+        "message/rfc822" = default-mail;
+        "text/html" = default-browser;
         "x-scheme-handler/http" = default-browser;
         "x-scheme-handler/https" = default-browser;
         "x-scheme-handler/about" = default-browser;
