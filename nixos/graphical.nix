@@ -504,10 +504,12 @@
       enable = true;
       defaultApplications = let
         default-browser = "firefox.desktop";
+        default-pdf-viewer = "org.gnome.Evince.desktop";
         default-mail = "org.gnome.Evolution.desktop";
       in {
         "text/html" = default-browser;
         "message/rfc822" = default-mail;
+        "application/pdf" = default-pdf-viewer;
         "x-scheme-handler/http" = default-browser;
         "x-scheme-handler/https" = default-browser;
         "x-scheme-handler/about" = default-browser;
