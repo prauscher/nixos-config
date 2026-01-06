@@ -40,7 +40,15 @@
   };
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    settings.connectivity = {
+      enabled = true;
+      # uri = "https://prauscher.de/check_network_status.txt";
+      uri = "http://nmcheck.gnome.org/check_network_status.txt";
+      interval = 90;
+    };
+  };
   users.users.prauscher.extraGroups = [ "networkmanager" ];
 
   hardware.bluetooth.enable = true;
