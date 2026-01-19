@@ -43,6 +43,8 @@
     ubuntu-classic
     font-awesome
     roboto
+    corefonts  # Arial, Verdana etc
+    vista-fonts  # Calibri etc
   ];
 
   users.users.prauscher = {
