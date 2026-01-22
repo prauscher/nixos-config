@@ -38,7 +38,7 @@
     };
     programs.nushell = {
       enable = true;
-      extraConfig = ''
+      extraEnv = ''
         $env.config.buffer_editor = "nano";
         $env.config.show_banner = false;
         $env.LANG = "de_DE.UTF-8";
