@@ -36,6 +36,11 @@
     ];
   };
 
+  programs.ausweisapp = {
+    enable = true;
+    openFirewall = true;
+  };
+
   fonts.packages = with pkgs; [
     adwaita-fonts
     noto-fonts
@@ -69,7 +74,6 @@
       seahorse
       gnomeExtensions.appindicator
       wlr-randr
-      ausweisapp
     ];
   };
 
