@@ -77,7 +77,7 @@
   # Enable CUPS
   services.printing = {
     enable = true;
-    drivers = with pkgs; [ postscript-lexmark ];
+    drivers = with pkgs; [ postscript-lexmark hplip ];
   };
   hardware.printers = {
     ensureDefaultPrinter = "Home_Lexmark";
@@ -91,6 +91,17 @@
         ppdOptions = {
           PageSize = "A4";
           Duplex = "None";  # duplex unit is broken
+        };
+      }
+      {
+        name = "Eltern_ColorLaserjet";
+        description = "HP Color LaserJet Pro MFP M479fdn";
+        location = "Eltern";
+        deviceUri = "socket://172.22.121.157:9100";
+        model = "HP/hp-color_laserjet_pro_m479-ps.ppd.gz";
+        ppdOptions = {
+          PageSize = "A4";
+          sides = "two-sided-long-edge";
         };
       }
     ];
