@@ -131,6 +131,7 @@
     psmisc  # for killall
     bluez
     unzip
+    wireguard-tools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
