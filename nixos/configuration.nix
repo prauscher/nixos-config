@@ -130,6 +130,7 @@
     jq
     psmisc  # for killall
     bluez
+    zip
     unzip
     wireguard-tools
   ];
