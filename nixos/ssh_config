@@ -17,3 +17,7 @@ User root
 Host howard.prauscher.de
 ForwardX11 yes
 ForwardX11Trusted yes
+
+Host rajesh.prauscher.de
+User admin
+Port 2200
