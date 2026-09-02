@@ -123,12 +123,7 @@
       };
       config.modifier = "${modifier}";
       config.terminal = "${terminal}";
-      config.bars = [
-        {
-          mode = "dock";
-          command = "${pkgs.waybar}/bin/waybar";
-        }
-      ];
+      config.bars = [];
       config.input."*".xkb_layout = "de";
       config.input."type:touch".map_to_output = "eDP-1";
       config.input."2:10:TPPS/2_Elan_TrackPoint".pointer_accel = "-0.5";  # amy
@@ -185,6 +180,7 @@
         "--release Print" = ''exec 'file="/tmp/screen-$(date +%Y%m%d-%H%M%S).png"; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" "$file"; ${pkgs.eog}/bin/eog "$file"' '';
       };
       config.startup = [
+        { always = true; command = "${pkgs.waybar}/bin/waybar"; }
         # not setting directly due to https://github.com/nix-community/home-manager/issues/5311
         { always = true; command = ''${pkgs.sway}/bin/swaymsg output "*" bg "/home/prauscher/Nextcloud/wallpapers/bula26_sterne.jpg" fill''; }
         { command = "${pkgs.mako}/bin/mako"; }
