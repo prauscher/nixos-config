@@ -90,7 +90,7 @@
       package = pkgs.adwaita-icon-theme;
     };
 
-    gtk = {
+    gtk = rec {
       enable = true;
       theme = {
         package = pkgs.gnome-themes-extra;
@@ -100,6 +100,8 @@
         package = pkgs.adwaita-icon-theme;
         name = "Adwaita";
       };
+      # silence warning for pre-26.05-config
+      gtk4.theme = theme;
     };
 
     wayland.windowManager.sway = let
@@ -465,9 +467,9 @@
           command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
           resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"''; }
       ];
-      events = [
-        { event = "before-sleep"; command = "${lock-screen}/bin/lock-screen"; }
-      ];
+      events = {
+        "before-sleep" = "${lock-screen}/bin/lock-screen";
+      };
     };
     services.kanshi = {
       enable = true;
