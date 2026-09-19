@@ -86,7 +86,7 @@
         name = "Home_Lexmark";
         description = "Lexmark CX317dn";
         location = "Home";
-        deviceUri = "ipp://172.22.153.132/ipp/print";
+        deviceUri = "ipp://172.22.153.41/ipp/print";
         model = "postscript-lexmark/Lexmark-CX310_Series-Postscript-Lexmark.ppd";
         ppdOptions = {
           PageSize = "A4";
