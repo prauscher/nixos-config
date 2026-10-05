@@ -23,5 +23,5 @@
     package = pkgs.wireshark;
   };
 
-  users.users.prauscher.extraGroups = [ "docker" "wireshark" ];
+  users.users.prauscher.extraGroups = [ "docker" "wireshark" "dialout" ];
 }
