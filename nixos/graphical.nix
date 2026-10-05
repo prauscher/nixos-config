@@ -74,6 +74,7 @@
       seahorse
       gnomeExtensions.appindicator
       wlr-randr
+      wl-clipboard
     ];
   };
 
