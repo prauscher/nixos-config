@@ -24,4 +24,6 @@
   };
 
   users.users.prauscher.extraGroups = [ "docker" "wireshark" "dialout" ];
+
+  services.tailscale.enable = true;
 }
