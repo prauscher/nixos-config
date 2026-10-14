@@ -127,6 +127,7 @@
     curl
     wget
     htop
+    pwgen
     jq
     psmisc  # for killall
     bluez

@@ -75,6 +75,7 @@
       gnomeExtensions.appindicator
       wlr-randr
       wl-clipboard
+      signal-desktop
     ];
   };
 
