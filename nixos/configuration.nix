@@ -17,7 +17,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;
 
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.trusted-users = [ "prauscher" ];
 
   # Maintenance
   nix.settings.auto-optimise-store = true;
